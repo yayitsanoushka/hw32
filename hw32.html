@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>hw</title>
+    </head>
+    <body>
+        <h1>hw</h1>
+        <form name="myform" onsubmit="validateform()">
+            <label>name: </label>
+            <input type="text" name="fname">
+            <input type="submit" value="submit">
+            <p id="hello"></p>
+            <input type="number" id="alias" min="1" max="80" required>
+            <button onclick="submitform()">submit</button>  
+                  
+        </form>
+        <script>
+       function validateform(){
+     var a=document.forms["myform"]["fname"].value
+     if (a==""){
+        alert("give name")
+    return false
+    }
+       }
+       function submitform(){
+       var b=document.getElementById("alias")
+       if (!b.checkValidity()){
+        document.getElementById("nickname").innerHTML=b.validationMessage
+       }
+       else {
+        document.getElementById("nickname").innerHTML="inputOk"
+       }
+       }
+        </script>
+    </body>
+</html>
